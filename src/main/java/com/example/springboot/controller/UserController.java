@@ -23,8 +23,8 @@ public class UserController {
     // @ResponseBody
     private User getUser(){
         User user = new User();
-        user.setName("tuotuo");
-        user.setAge(26);
+        user.setName("tuolifeng");
+        user.setAge(27);
         user.setBirthday(new Date());
         user.setPassword("123456");
         user.setDesc("spring boot json test");
@@ -36,7 +36,7 @@ public class UserController {
     private IMoocJSONResult getUserJson(){
         User user = new User();
         user.setName("tuotuo");
-        user.setAge(26);
+        user.setAge(28);
         user.setBirthday(new Date());
         user.setPassword("123456");
         user.setDesc("spring boot json test");
