@@ -18,6 +18,8 @@
                         password="123456">
         </jdbcConnection>
 
+
+
         <!-- 对于生成的pojo所在包 -->
         <javaModelGenerator targetPackage="com.example.springboot.pojo" targetProject="src/main/java"/>
 
