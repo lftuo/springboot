@@ -1,5 +1,8 @@
 package com.example.springboot.utils;
 
+/**
+ * 读取generatorConfig.xml文件，生成pojo与mapper
+ */
 
 import java.io.File;
 import java.util.ArrayList;
