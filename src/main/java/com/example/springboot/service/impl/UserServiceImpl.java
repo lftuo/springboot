@@ -99,4 +99,15 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void saveUserTransactional(SysUser user) {
+        userMapper.insert(user);
+
+        int a = 1/0;
+
+        user.setIsDelete(1);
+        userMapper.updateByPrimaryKeySelective(user);
+    }
 }

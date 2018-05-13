@@ -93,4 +93,21 @@ public class MyBatisCRUDController {
         SysUser user = userService.queryUserByIdCustom(id);
         return IMoocJSONResult.ok(user);
     }
+
+    @RequestMapping("/saveUserTransactional")
+    public IMoocJSONResult saveUserTransactional(){
+        String userId = sid.nextShort();
+
+        SysUser user = new SysUser();
+        user.setId(userId);
+        user.setUserName("tuo " + new Date());
+        user.setNickname("tuo " + new Date());
+        user.setPassword("abc123");
+        user.setIsDelete(0);
+        user.setRegistTime(new Date());
+
+        userService.saveUserTransactional(user);
+
+        return IMoocJSONResult.ok("保存成功");
+    }
 }
