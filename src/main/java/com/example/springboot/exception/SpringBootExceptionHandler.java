@@ -25,7 +25,7 @@ public class SpringBootExceptionHandler {
     }*/
 
     @ExceptionHandler(value = Exception.class)
-    public Object errorHandler(HttpServletRequest request, HttpServletResponse response, Exception e){
+    public Object errorHandler(HttpServletRequest request, HttpServletResponse response, Exception e) throws Exception{
         e.printStackTrace();
 
         if (isAjax(request)){
