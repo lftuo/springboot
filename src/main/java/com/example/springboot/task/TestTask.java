@@ -11,7 +11,8 @@ public class TestTask {
     private static final SimpleDateFormat dataFormat = new SimpleDateFormat("HH:mm:ss");
 
     // 定义每过3秒执行
-    @Scheduled(fixedRate = 3000)
+    // @Scheduled(fixedRate = 3000)
+    @Scheduled(cron = "0/4 * * * * ? ")
     public void reportCurrentTime(){
         System.out.println("现在时间：" + dataFormat.format(new Date()));
     }
