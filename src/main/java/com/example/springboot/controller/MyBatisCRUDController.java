@@ -73,4 +73,18 @@ public class MyBatisCRUDController {
         return IMoocJSONResult.ok(userList);
 
     }
+
+    @RequestMapping("/queryUserListPaged")
+    public IMoocJSONResult queryUserListPaged(Integer page){
+
+        if (page == null){
+            page = 1;
+        }
+
+        int pageSize = 10;
+        SysUser user = new SysUser();
+        List<SysUser> users = userService.queryUserListPaged(user,page,pageSize);
+        return IMoocJSONResult.ok(users);
+
+    }
 }

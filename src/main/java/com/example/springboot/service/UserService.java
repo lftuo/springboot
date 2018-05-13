@@ -16,6 +16,8 @@ public interface UserService {
 
     public List<SysUser> queryUserList(SysUser user);
 
+    List<SysUser> queryUserListPaged(SysUser user, Integer page, int pageSize);
+
     /*public List<SysUser> queryUserListPaged(SysUser user, Integer page, Integer pageSize);
 
     public SysUser queryUserByIdCustom(String userId);
