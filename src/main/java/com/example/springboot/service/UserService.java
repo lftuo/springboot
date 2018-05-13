@@ -16,11 +16,9 @@ public interface UserService {
 
     public List<SysUser> queryUserList(SysUser user);
 
-    List<SysUser> queryUserListPaged(SysUser user, Integer page, int pageSize);
-
-    /*public List<SysUser> queryUserListPaged(SysUser user, Integer page, Integer pageSize);
+    public List<SysUser> queryUserListPaged(SysUser user, int page, int pageSize);
 
     public SysUser queryUserByIdCustom(String userId);
 
-    public void saveUserTransactional(SysUser user);*/
+    /*public void saveUserTransactional(SysUser user);*/
 }

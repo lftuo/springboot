@@ -1,6 +1,7 @@
 package com.example.springboot.service.impl;
 
 import com.example.springboot.mapper.SysUserMapper;
+import com.example.springboot.mapper.SysUserMapperCustom;
 import com.example.springboot.pojo.SysUser;
 import com.example.springboot.service.UserService;
 import com.github.pagehelper.PageHelper;
@@ -19,6 +20,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private SysUserMapper userMapper;
+
+    @Autowired
+    private SysUserMapperCustom userMapperCustom;
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
@@ -68,10 +72,10 @@ public class UserServiceImpl implements UserService {
         return userList;
     }
 
+
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public List<SysUser> queryUserListPaged(SysUser user, Integer page, int pageSize) {
-
+    public List<SysUser> queryUserListPaged(SysUser user, int page, int pageSize) {
         PageHelper.startPage(page,pageSize);
 
         Example example = new Example(SysUser.class);
@@ -86,4 +90,13 @@ public class UserServiceImpl implements UserService {
         return users;
     }
 
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public SysUser queryUserByIdCustom(String id){
+        List<SysUser> userList = userMapperCustom.queryUserSimpleInfoById(id);
+        if (userList != null && !userList.isEmpty()){
+            return (SysUser) userList.get(0);
+        }
+        return null;
+    }
 }

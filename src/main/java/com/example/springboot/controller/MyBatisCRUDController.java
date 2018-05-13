@@ -87,4 +87,10 @@ public class MyBatisCRUDController {
         return IMoocJSONResult.ok(users);
 
     }
+
+    @RequestMapping("/queryUserByIdCustom")
+    public IMoocJSONResult queryUserByIdCustom(String id){
+        SysUser user = userService.queryUserByIdCustom(id);
+        return IMoocJSONResult.ok(user);
+    }
 }
