@@ -1,5 +1,6 @@
 package com.example.springboot;
 
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import tk.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"com.example.springboot","org.n3r.idworker"})
 // 开启定时任务
 @EnableScheduling
+// 开启异步任务
+@EnableAsync
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
